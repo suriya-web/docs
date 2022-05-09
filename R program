@@ -1,0 +1,328 @@
+
+Aim: Create a calculator program using Python. 
+Algorithm:
+Step 1: Start the program.
+Step 2: Print the choices.
+Step 3: Get the choices from the user to perform arithmetic operation.
+Step 4: Get two values from the user.
+Step 5: If the choice is 1-add two numbers,2-subtract,3-multiply, and 4-divide two 
+numbers.
+Step 6: Display the result.
+Step 7: Stop the Program.
+Solution:
+def add(x, y):
+ return x + y
+def subtract(x, y):
+ return x - y
+def multiply(x, y):
+ return x * y
+def divide(x, y):
+ return x / y
+print("Select operation.")
+print("1.Add")
+print("2.Subtract")
+print("3.Multiply")
+print("4.Divide")
+while True:
+ choice = input("Enter choice(1/2/3/4): ")
+ if choice in ('1', '2', '3', '4'):
+ num1 = float(input("Enter first number: "))
+ num2 = float(input("Enter second number: "))
+ if choice == '1':
+ print(num1, "+", num2, "=", add(num1, num2))
+ elif choice == '2':
+ print(num1, "-", num2, "=", subtract(num1, num2))
+ elif choice == '3':
+ print(num1, "*", num2, "=", multiply(num1, num2))
+ elif choice == '4':
+ print(num1, "/", num2, "=", divide(num1, num2))
+ break
+ else:
+ print("Invalid Input")
+
+2.STRING FUNCTIONS
+Aim: Create Python program using different String functions
+Algorithm:
+Step 1: Start the program.
+Step 2: Declare a string.
+Step 3: Use inbuilt functions such as concatenation, capitalize(), count(), upper() and
+lower().
+Step 4: Display the result.
+Step 5: Stop the program.
+Solution:
+str = 'programiz'
+print('str = ', str)
+print('str[0] = ', str[0])
+print('str[-1] = ', str[-1])
+print('str[1:5] = ', str[1:5])
+str1 = 'Hello'
+str2 ='World!'
+print('str1 + str2 = ', str1 + str2)
+capitalized_string = str.capitalize()
+print('Capitalized String:',capitalized_string )
+string = "Python is awesome, isn't it?"
+substring = "is"
+count = string.count(substring)
+print("The count is:", count)
+print(string.replace('Python', 'Java'))
+print(string.upper())
+print(string.lower())
+Output :
+str = programiz
+str[0] = p
+str[-1] = z
+str[1:5] = rogr
+str1 + str2 = HelloWorld!
+Capitalized String: Programiz
+The count is: 2
+Java is awesome, isn't it?
+PYTHON IS AWESOME, ISN'T IT?
+python is awesome, isn't it?
+
+3.SELECTION SORT 
+Aim: Implement Selection sort algorithm using Python Program.
+Algorithm:
+Step 1: Start the program.
+Step 2: Declare a list of integers.
+Step 3: Pass the list to function for sorting using selection sort.
+Step 4: Compare a value with the rest of list.
+Step 5:Swap the numbers using temp variable if the number is greater.
+Step 6: Display the result.
+Step 7: Stop the program.
+Solution :
+def selectionSort(array):
+ n= len(array)
+ for i in range(n):
+ minimum = i
+ for j in range(i+1, n):
+ if (array[j] < array[minimum]):
+ minimum = j
+ temp = array[i]
+ array[i] = array[minimum]
+ array[minimum] = temp
+ return array
+array = [14, 4, 9, 5, 3, 16, 12]
+print(selectionSort(array))
+Output:
+[3, 4, 5, 9, 12, 14, 16]
+
+4.STACK OPERATION
+Aim: Implement stack Operation using Python Program.
+Algorithm:
+Step 1: Start the program.
+Step 2: Declare an empty stack.
+Step 3: Use append() to add elements in stack.
+Step 4: Use pop() to remove elements from stack.
+Step 5: Display the result.
+Step 6: Stop the program.
+Solution:
+stack = []
+stack.append('a')
+stack.append('b')
+stack.append('c')
+print('Initial stack')
+print(stack)
+print('\nElements poped from stack:')
+print(stack.pop())
+print(stack.pop())
+print(stack.pop())
+print('\nStack after elements are poped:')
+print(stack)
+Output:
+Initial stack
+['a', 'b', 'c']
+Elements poped from stack:
+c
+b
+a
+Stack after elements are poped:
+
+
+
+Aim: Read and Write into a file using Python Program.
+Algorithm:
+Step 1: Start the program.
+Step 2: Open a file in write “w” mode.
+Step 3: Write a string using write() function.
+Step 4: Close file.
+Step 5: Open file in read “r” mode.
+Step 6: Read the contents using read() functions.
+Step 7: Display the strings.
+Step 8: Stop the program.
+Solution:
+file = open("testfile.txt","w") 
+file.write("Hello World\n") 
+file.write("This is our new text file\n") 
+file.write("and this is another line.\n") 
+file.write("Why? Because we can.") 
+file.close()
+file = open("testfile.txt", "r") 
+print(file.read(5)) 
+file = open("testfile.txt", "r") 
+print(file.read())
+Output:
+Hello
+Hello World
+This is our new text file
+and this is another line.
+Why? Because we can.
+
+
+
+Aim: Demonstrate use of Dictionaries in Python Program.
+Algorithm:
+Step 1: Start the program.
+Step 2: Declare a dictionary.
+Step 3: Declare the value by passing key.
+Step 4: Stop the program.
+Solution:
+my_dict = {'name': 'Jack', 'age': 26}
+print(my_dict['name'])
+print(my_dict.get('age'))
+print(my_dict.get('address'))
+print(my_dict['address'])
+Output:
+Jack
+26
+None
+KeyErr
+
+7.CSV FILES INTO INTERNAL DATA STRUCTURE.
+Aim: Create Comma Separate Files (CSV), Load CSV files into internal Data Structure
+Algorithm:
+Step 1: Start the program.
+Step 2: Import the csv module.
+Step 3: Create a list of comma separated values.
+Step 4: Open a new csv file in write “w” mode.
+Step 5: write the values in the file.
+Step 6: Close the file.
+Step 7: Open the file in read "r" mode.
+Step 8 : Read the values and display the result.
+Step 9: Stop the program.
+Solution:
+import csv
+persons=[('Lata',22,45),('Anil',21,56),('John',20,60)]
+csvfile=open('persons.csv','w', newline='')
+obj=csv.writer(csvfile)
+for person in persons:
+ obj.writerow(person)
+csvfile.close()
+csvfile=open('persons.csv','r', newline='')
+obj=csv.reader(csvfile)
+for row in obj:
+ print (row)
+Output:
+['Lata', '22', '45']
+['Anil', '21', '56']
+['John', '20', '60']
+
+8.SQL SELECT STATEMENT
+Aim: Write script to work like a SQL SELECT statement for internal Data Structure made in 
+earlier exercise.
+Algorithm:
+1. The SELECT Statement in SQL is used to retrieve or fetch data from a database. 
+2. We can fetch either the entire table or according to some specified rules. 
+3. The data returned is stored in a result table. 
+4. This result table is also called result-set.
+5. This query will return all the rows in the table with fields column1 , column2.
+6. To fetch the entire table or all the fields in the table
+Solution:
+import mysql.connector
+from mysql.connector import Error
+try:
+ connection = mysql.connector.connect(host='localhost',
+ database='Electronics', 
+ user='localhost', 
+ password='13aug2003')
+ sql_select_Query = "select * from Laptop"
+ cursor = connection.cursor()
+ cursor.execute(sql_select_Query)
+ records = cursor.fetchall()
+ print("Total number of rows in Laptop is: ", cursor.rowcount)
+ print("\nPrinting each laptop record")
+ for row in records:
+ print("Id = ", row[0], )
+ print("Name = ", row[1])
+ print("Price = ", row[2])
+ print("Purchase date = ", row[3], "\n")
+except Error as e:
+ print("Error reading data from MySQL table", e)
+finally:
+ if (connection.is_connected()):
+ connection.close()
+ cursor.close()
+ print("MySQL connection is closed")
+
+9.SQL INNER JOIN 
+Aim: Write script to work like a SQL Inner Join for an internal Data Structure made in 
+earlier exercise.
+Algorithm:
+1. The INNER JOIN selects all rows from both participating tables as long as there is a 
+match between the columns.
+2. An SQL INNER JOIN is same as JOIN clause, combining rows from two or more 
+tables.
+3. The INNER JOIN in SQL joins two tables according to the matching of a certain 
+criteria using a comparison operator.
+4. SQL INNER JOIN between two tables.
+5. To join item name, item unit columns from foods table and company name, company 
+city columns from company table.
+Solution:
+import mysql.connector
+mydb = mysql.connector.connect(
+host="localhost",
+user="myusername",
+password="mypassword",
+database="mydatabase"
+)
+mycursor = mydb.cursor()
+sql = "SELECT \
+users.name AS user, \
+products.name AS favorite \
+FROM users \
+INNER JOIN products ON users.fav = products.id"
+mycursor.execute(sql)
+myresult = mycursor.fetchall()
+for x in myresult:
+print(x)
+Output:
+C:\Users\My Name>python demo_mysql_inner_join.py 
+('John', 'Chocolate Heaven') 
+('Peter', 'Chocolate Heaven') 
+('Amy', 'Tasty Lemon')
+
+10. EXCEPTIONS IN PYTHON
+Aim: Demonstrate Exceptions in Python.
+Algorithm:
+Step 1: Start the program.
+Step 2: Import sys module.
+Step 3: Declare a random list with multiple data type.
+Step 4: Display the values of list.
+Step 5: Divide the values by 1.
+Step 6: Display the result and error in case.
+Step 7: Stop the program.
+Solution:
+import sys
+randomList = ['a', 0, 2]
+for entry in randomList:
+try:
+ print("The entry is", entry)
+ r = 1/int(entry)
+ break
+except:
+ print("Oops!", sys.exc_info()[0], "occurred.")
+ print("Next entry.")
+ print()
+print("The reciprocal of", entry, "is", r)
+Output:
+The entry is a
+Oops! <class 'ValueError'> occurred.
+Next entry.
+The entry is 0
+Oops! <class 'ZeroDivisionError'> occurred.
+Next entry.
+The entry is 2
+The reciprocal of 2 is 0.5
+
+
+
+
